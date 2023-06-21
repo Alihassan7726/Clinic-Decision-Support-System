@@ -24,3 +24,4 @@ Werkzeug==0.15.5
 regex==2020.11.13
 tensorflow_text==2.9.0
 lime==0.2.0.1
+matplotlib==3.3.2
