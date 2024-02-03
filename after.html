@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient's Disease</title>
+    <style>
+        body {
+            background-image: url('../static/ombre.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <center>
+        <h1>PATIENT'S DISEASE:</h1>
+
+        {% if data %}
+        <h1>The patient has {{ data }} disease</h1>
+        {% else %}
+        <h1>Please provide the right details for disease prediction</h1>
+        {% endif %}
+    </center>
+
+    <!-- Lime Explanation Graph -->
+    <div id="limeGraph">
+        {{ graph|safe }}
+    </div>
+
+    <!-- JavaScript to set the Lime Explanation Graph -->
+    <script>
+        // Ensure the document is ready
+        $(document).ready(function () {
+            // Set the size of the Lime Explanation Graph container
+            var graphContainer = document.getElementById("limeGraph");
+            graphContainer.style.width = "800px";
+            graphContainer.style.height = "600px";
+        });
+    </script>
+
+    <!-- Go back to the home page -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/" style="text-decoration: none; font-weight: bold;">Go back to the home page</a>
+    </div>
+</body>
+</html>
